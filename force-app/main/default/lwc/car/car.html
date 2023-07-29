@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Car">
+
+        <h1>Tesla</h1>
+        
+        <lightning-input 
+        type="text"
+        label="Engine Type"
+        onchange={handleEngineChange}></lightning-input>
+        
+        <h1>Engine Type : {engineType}</h1>
+    
+
+        
+        <c-car-engine
+        engine-model={engineType}
+        model-year="2001"></c-car-engine>
+        
+        <c-car-engine> engine-model={engineType}</c-car-engine>
+        <c-car-engine-features></c-car-engine-features>
+
+    </lightning-card>
+</template>

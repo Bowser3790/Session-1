@@ -1,0 +1,20 @@
+<template>
+
+    <lightning-card title="Family Members">
+        <lightning-input 
+        type="text"
+        label="Add Family Members"
+        placeholder="Please Enter New Family Member"
+        onblur={handleFamilyMember}>
+
+        </lightning-input>
+
+        <ul>
+            <template for:each={familyMembers} for:item="eachMember">
+                <li key={eachMember.id}>First Name : {eachMember.fName}. Id : {eachMember.id}</li>
+
+            </template>
+        </ul>
+    </lightning-card>
+    
+</template>

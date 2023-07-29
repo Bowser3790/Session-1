@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title ="Imperative Apex Method Call">
+        <lightning-input type="text" label="Search Account" 
+        onchange={handleChange}></lightning-input>
+        <!--Create JS button (when we click on this button accountList Will be displayed)-->
+        <lightning-button label="Search Account" onclick={hanleSearch}>
+        </lightning-button>
+        
+        <ul>
+            <!-- accounts.data returns the list of accounts data 
+            When I call apex imperatively, for:each ={accounts}
+            When I call apex with wire, for:each={accounts.}-->
+            <template for:each={accounts.data} for:item="eachAccount">
+                    <li key={eachAccount.Id}>{eachAccount.Name}</li>
+            </template>
+        </ul>
+    </lightning-card>
+    
+</template>

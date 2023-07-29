@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Conditional Rendering">
+        <!-- we must use template tag for conditional rendering-->
+        <template if:true={flag}>
+            <h1>This Tag will be visible when flag is true</h1>
+        </template>
+        <template if:false={flag1}>
+            <h1>This Tag will be visible when flag1 is true</h1>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="Checkbox Rendering">
+
+        <lightning-input type="checkbox" label="Check the checkbox to sign agreement"
+        name="input1"
+        onchange={handleChange}
+        checked={display}></lightning-input>
+
+        <template if:true={display}>
+            <h1>Thank you for accepting agreement</h1>
+        </template>
+        <template if:false={display}>
+            <h1>Please complete the agreement</h1>
+        </template>
+
+    </lightning-card>
+</template>

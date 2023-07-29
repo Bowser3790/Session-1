@@ -1,0 +1,16 @@
+
+/* applying to h2 element in html file */
+h2{
+
+    color:blue;
+    background-color: yellow;
+}
+
+/*apply style to only class labeled as is below 
+most common way is to create class and use them for style 
+this is the best way to do this because we can keep using the syle/ class in other elements */
+.my-style{
+
+    color:blueviolet;
+    background-color: beige;
+}

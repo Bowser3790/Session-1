@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Parent Component">
+        <lightning-layout>
+            <lightning-layout-item padding="around-small">
+                <c-child1 onclicked={handleButtonClick1}></c-child1>
+                <div>Event Name 1 : {eventName1}</div>
+            </lightning-layout-item>
+
+        
+
+        <lightning-layout-item>
+            <c-child2 onclicked2={handleButtonClick2}></c-child2>
+            <div>Event Name 2 : {eventName2}</div>
+            <div>{inputValue2}</div>
+        </lightning-layout-item>
+
+    </lightning-layout>
+
+    </lightning-card>
+    
+</template>

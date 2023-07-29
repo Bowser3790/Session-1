@@ -1,0 +1,53 @@
+<template>
+    <lightning-card title="Data Binding">
+        <h1>My name is {myName} !!</h1>
+        <h1>My age is {age}</h1>
+
+    </lightning-card>
+
+    <lightning-card title="On Input Handler">
+        <!--oninput RUNS whenever there is a change in the input *when user types input*-->
+        <input type="text" oninput={handleInput}/>
+        <h1>Hello {dynamicBinding}</h1>
+
+    </lightning-card>
+
+    <lightning-card title="On Change Handler">
+        <div class="slds-p-around_medium lgc-bg">
+            <!-- 1. create input -->
+            <lightning-input 
+            type="text" 
+            label="Enter some text" 
+            onchange={handleInputChange}></lightning-input>
+        </div>
+        <!-- 3. bing the country property -->
+        <h1>I am from {country}</h1>
+
+    </lightning-card>
+     
+
+    <lightning-card>
+
+        <!-- Success variant: Identifies a successful action -->
+     <lightning-button variant="success" 
+     label="Success" 
+     title="Successful action" 
+     onclick={handleClick} 
+     class="slds-m-left_x-small"></lightning-button>
+     <div class="slds-m-vertical_medium">
+    
+    <!-- Destructive text variant: Identifies a potentially negative action, but has a lighter look -->
+    <lightning-button variant="destructive-text" 
+    label="Destructive Text" 
+    title="Destructive action with a lighter look" 
+    onclick={handleClick} 
+    class="slds-m-left_x-small"></lightning-button>
+
+    <!-- Success variant: Identifies a successful action -->
+        
+        
+        <p>The label of the button that was clicked is: <span class="slds-text-heading_small">{clickedButtonLabel}</span></p>
+    </div>
+    
+    </lightning-card>
+</template>

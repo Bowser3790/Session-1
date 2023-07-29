@@ -1,0 +1,61 @@
+<template>
+<lightning-card title="Calling Slot Child">
+    <h1>1. Parent Header</h1>
+    
+    <div>
+    <c-slot-child>
+
+        <h1>5. Slot Child header</h1> 
+
+        <p>6. Slot Child paragraph</p>
+    </c-slot-child>
+    </div>
+    
+    <p>2. Parent paragraph</p>
+
+</lightning-card>
+
+<lightning-card title="Calling Named Child Component">
+
+    <c-slot-Named-Child>
+        <span slot="father">John</span>
+        <span slot="mother">Nancy</span>
+        <span slot="child">Tim</span>
+    </c-slot-Named-Child>
+
+</lightning-card>
+
+<lightning-card>
+    <lightning-input 
+    type="text"
+    label="Country"
+    onchange={handleCountryChange}></lightning-input>
+    <lightning-input 
+    type="text"
+    label="city"
+    onchange={handleCityChange}></lightning-input>
+    <lightning-input 
+    type="text"
+    label="famous for"
+    onchange={handleFamousChange}></lightning-input>
+
+    <h1>COUNTRY : {country}</h1>
+    <h1>CITY : {city}</h1>
+    <h1>FAMOUS FOR : {famous}</h1>
+
+    
+    <!-- when you do this way below it makes the code more dynamic. 
+        use case: how do you do data match between parent HTML and child HTML? use SLOT's -->
+
+    <c-slot-named-details>
+        <div>
+            <span slot="country">COUNTRY : <b>{country}</b></span>
+            <span slot="city"> CITY : <b>{city}</b></span>
+            <span slot="famous for">FAMOUS FOR :  <b>{famous}</b></span>
+        </div>
+    </c-slot-named-details>
+
+</lightning-card>
+
+    
+</template>

@@ -1,0 +1,10 @@
+h1{
+    color: red;
+
+}
+c-slot-child p{
+    color: purple;
+    background-color: violet;
+    border: 2px solid blue;
+    width: 50%;
+}

@@ -1,0 +1,62 @@
+<template>
+    <lightning-card title="For Each">
+        {cityList}
+    
+
+    <template for:each={cityList} for:item="eachCity">
+
+        <p key={eachCity}></p> 
+    </template>
+    
+    </lightning-card>
+
+    <lightning-card title="My favorite customers!">
+        <ul class="slds-has-dividers_around">
+            <template for:each={customerList} for:item="eachCustomer">
+                <li class="slds-item" key={eachCustomer.id}>{eachCustomer.name}</li>
+                <li class="slds-item" key={eachCustomer.id}>{eachCustomer.phone}</li>
+                <li class="slds-item" key={eachCustomer.id}>{eachCustomer.email}</li>
+                <li class="slds-item" key={eachCustomer.id}>
+                    <img src={eachCustomer.imgURL}/>
+                </li>
+            </template>
+        </ul>
+        </lightning-card>
+    <lightning-card title="Iterator : it">
+
+        <ul class="slds-list_dotted">
+            <template iterator:it={cityList}>
+
+            <li key={it.value}>{it.value}</li>
+        </template>
+        </ul>
+
+    </lightning-card>
+    <lightning-card title="My favorite customers!">
+        <ul class="slds-has-dividers_around">
+            <template iterator:it={customerList}>
+                <li class="slds-item" key={it.value.id}>{it.value.name}</li>
+                <li class="slds-item" key={it.value.id}>{it.value.phone}</li>
+                <li class="slds-item" key={it.value.id}>{it.value.email}</li>
+                <li class="slds-item" key={it.value.id}>
+                    <img src={it.value.imgURL}/>
+                </li>
+            </template>
+        </ul>
+        </lightning-card>
+
+        <lightning-card title="First and Last item">
+            <ul class="slds-has-dividers_around">
+                <template iterator:it={cityList}>
+
+                    <!-- it.value Holds Each Data In The ARRAYs-->
+                    <li key={it.value} if:true={it.first}>FIRST : {it.value}</li>
+                    <li key={it.value} if:true={it.last}>LAST : {it.value}</li>
+                </template>
+
+
+            </ul>
+        </lightning-card>
+
+
+    </template>
